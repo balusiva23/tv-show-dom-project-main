@@ -176,7 +176,11 @@ const selectElement = document.getElementById('episodeslist');
 var displayContainer = document.getElementById("grid");
 displayContainer.innerHTML = ""
 // Add event listener to the select element
-selectElement.addEventListener("change", function() {
+selectElement.addEventListener('change', getSelecteddata);
+//selectElement.addEventListener("change", function() {
+ async function getSelecteddata(){
+  try {
+    const episodes = await getAllEpisodes();
   displayContainer.innerHTML = ""
   // Get the selected option
   var selectedOption = selectElement.options[selectElement.selectedIndex];
@@ -189,12 +193,19 @@ selectElement.addEventListener("change", function() {
    return displayEpisodes();
   }
   
-  var filteredData = getAllEpisodes().filter(function(item) {
+  var filteredData = episodes.filter(function(item) {
    // console.log(item.name.toLowerCase());
     //console.log(episodeName.toLowerCase().trim());
     return item.name.toLowerCase() === episodeName.toLowerCase().trim();
   });
   
+
+  const totalData = document.getElementById("totalData");
+  
+  totalData.innerHTML = "";
+
+  totalData.innerHTML = `Displaying ${filteredData.length} / ${episodes.length} episodes`;
+
  // console.log("Filtered Data:", filteredData);
   filteredData.forEach((episode) => {
    // console.log(episode.name.toLowerCase());
@@ -230,8 +241,10 @@ selectElement.addEventListener("change", function() {
     // Append the episode div to the container
     displayContainer.appendChild(episodeDiv);
   });
-  
-});
+}catch (error) {
+  console.error('Error:', error);
+}
+};
 
 
 
