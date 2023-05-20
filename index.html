@@ -1,30 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TV Show Project | balusiva23</title>
-    <link href="style.css" rel="stylesheet" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  </head>
-
-  <body>
+    <link href="assets/style.css" rel="stylesheet" />
+</head>
+<body>
     <div class="container" id="container">
-      <div class="search">
-        <select class="input" name="episodeslist" id="episodeslist">
-         <option value="all">All Episodes</option>
-        </select>
-        <input class="input-inset" type="text"  id="searchInput" placeholder="Search">
-        <p id="totalData"></p>
-      </div>
-      <div class="grid" id="grid">
-     </div>
-      </div>
-
-    <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
-    <!-- <script src="episodes.js"></script> -->
-
-    <!-- Loads YOUR javascript code -->
-    <script src="script.js"></script>
-  </body>
+        <div class="search">
+          <select class="input" name="showlist" id="showlist">
+            <option value=""></option>
+        
+           
+          </select>
+      
+          <input class="input-inset" type="text"  id="searchShow" placeholder="Search">
+          <p id="totalData"></p>
+        </div>
+        <div class="episodegrid" id="episodegrid" >
+            <!-- <div class="episodebox">
+                
+                    <h1 > Winter is Coming - S01E01</h1>
+                        <div class="episodecontent">
+                            <img src="https://static.tvmaze.com/uploads/images/medium_landscape/1/2668.jpg">
+                           
+                            <p>Lord Eddard Stark, ruler of the North, is summoned to court by his old friend, King Robert Baratheon, to serve as the King's Hand. Eddard reluctantly agrees after learning of a possible threat to the King's life. Eddard's bastard son Jon Snow must make a painful decision about his own future, while in the distant east Viserys Targaryen plots to reclaim his father's throne, usurped by Robert, by selling his sister in marriage.</p>
+                           <div class="box-details" >
+                            
+                            <p>Rated :</p><br>
+                            <p>Generes :</p><br>
+                            <p>Status : </p><br>
+                            <p>Runtime : </p><br>
+                           </div>
+                        </div>
+                       
+           </div> -->
+        </div>
+        </div>
+  
+     
+      <script src="assets/showslist.js"></script>
+</body>
 </html>
